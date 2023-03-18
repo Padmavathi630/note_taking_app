@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Note Taking App</title>
+</head>
+<style>
+    .label{
+        font-size: 20px;
+    }
+</style>
+<body>
+	<h1 style="color: blueviolet;"> Note Taking App</h1>
+	<form method="POST">
+		<label  class=label for="note">Add a note:</label>
+		<input type="text" name="note" id="note">
+		<button type="submit">Add</button>
+	</form>
+	<h2 >Notes:   </h2>
+	{% if notes %}
+		<ul>
+			{% for note in notes %}
+				<li>{{ note }}</li>
+			{% endfor %}
+		</ul>
+	{% else %}
+		<p>No notes added yet.</p>
+	{% endif %}
+</body>
+</html>
